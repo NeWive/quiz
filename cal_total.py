@@ -28,15 +28,10 @@ def handle_result(file_name, key):
     with open(file_name, 'r', encoding='utf-8') as j:
         source = json.load(j)
     for item in source:
-        plt.figure()
-        plt.bar(source[item].keys(), source[item].values(), 0.4, color='blue')
-        plt.xlabel('0-9')
-        plt.ylabel('数量')
-        plt.title(keyMaps[key][int(item) - 1])
-        plt.show()
-        plt.savefig("./dist/" + keyMaps[key][int(item) - 1] + ".png")
-        plt.close('all')
-
+	total = 0;
+	for i in item:
+	
+		
 
 handle_result('./grade_total.json',  'grade')
 handle_result('./major_total.json',  'major')
